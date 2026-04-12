@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetCode Tracker</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <span class="nav-brand">🧩 LeetCode Tracker</span>
+      <button id="theme-toggle" class="theme-btn">☀️</button>
+    </nav>
+
+    <div class="container">
+
+      <div class="hero">
+        <h1 class="app-title">LeetCode Tracker</h1>
+        <p class="app-subtitle">Visualize your problem-solving progress</p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="single">
+          <i class="fa-solid fa-user"></i> Single User
+        </button>
+        <button class="tab" data-tab="compare">
+          <i class="fa-solid fa-users"></i> Compare
+        </button>
+        <button class="tab" data-tab="leaderboard">
+          <i class="fa-solid fa-ranking-star"></i> Leaderboard
+        </button>
+      </div>
+
+      <div class="panel active" id="panel-single">
+        <div class="search-box">
+          <input type="text" id="username-input" placeholder="e.g. neal_wu" autocomplete="off" />
+          <button id="search-btn">Search</button>
+        </div>
+        <div id="result-section"></div>
+      </div>
+
+      <div class="panel" id="panel-compare">
+        <div class="compare-inputs">
+          <div class="search-box">
+            <input type="text" id="user1-input" placeholder="First username" autocomplete="off" />
+          </div>
+          <span class="vs-badge">VS</span>
+          <div class="search-box">
+            <input type="text" id="user2-input" placeholder="Second username" autocomplete="off" />
+          </div>
+        </div>
+        <button id="compare-btn">Compare</button>
+        <div id="compare-section"></div>
+      </div>
+
+      <div class="panel" id="panel-leaderboard">
+        <div class="search-box">
+          <input type="text" id="lb-input" placeholder="Add username to leaderboard" autocomplete="off" />
+          <button id="lb-add-btn"><i class="fa-solid fa-plus"></i> Add</button>
+        </div>
+        <div id="lb-section"></div>
+      </div>
+
+    </div>
+
+    <footer class="footer">Built by Manav</footer>
+
+    <script src="api.js"></script>
+    <script src="logic.js"></script>
+    <script src="ui.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
